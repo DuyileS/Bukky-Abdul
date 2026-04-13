@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="bg-primary min-h-screen text-white font-jost">
+    <div className="bg-primary text-white font-jost">
       <Navbar />
       <Intro />
       <Footer />

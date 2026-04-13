@@ -14,7 +14,7 @@ const Navbar = () => {
 
     return (
         <nav className="sticky top-0 flex font-jost justify-between items-center z-50 max-w-7xl 2xl:max-w-[1400px] p-4 mx-auto w-full border-b border-secondary bg-primary/80 backdrop-blur-md">
-            <Link href={"/"}>
+            <Link href={"/"} className="relative z-50">
                 {/* <Image
                     src={"/logo.png"}
                     alt="Logo"
@@ -22,9 +22,9 @@ const Navbar = () => {
                     width={80}
                     quality={100}
                 /> */}
-                <h1>BUKKY ABDUL</h1>
+                <h1 className="text-xl font-bold">BUKKY ABDUL</h1>
             </Link>
-            <div className="hidden md:flex justify-between items-center">
+            <div className="hidden lg:flex justify-between items-center">
                 <ul className="flex justify-center gap-8 lg:gap-4  2xl:gap-16  mr-8 lg:mr-24 2xl:mr-4">
                     {links.map((link, index) => {
                         const isActive = pathname === link.href;
@@ -49,7 +49,7 @@ const Navbar = () => {
                     <Button />
                 </Link>
             </div>
-            <div className="md:hidden z-50">
+            <div className="lg:hidden z-50">
                 <Icon
                     icon={isOpen ? "mdi:close" : "mdi:menu"}
                     className="w-10 h-10 focus:outline-none cursor-pointer transition-transform duration-300"
@@ -57,16 +57,28 @@ const Navbar = () => {
                 />
             </div>
             <div
-                className={`fixed top-0 left-0 w-full h-1/2 bg-primary text-center transition-all duration-300 ease-in-out overflow-hidden ${isOpen
-                    ? "opacity-100 translate-y-0 pointer-events-auto"
+                className={`fixed inset-0 w-full h-screen bg-primary/95 backdrop-blur-lg flex items-center justify-center transition-all duration-500 ease-in-out ${isOpen
+                    ? "opacity-100 translate-y-0"
                     : "opacity-0 -translate-y-full pointer-events-none"
-                    } md:hidden`}
+                    } lg:hidden z-40`}
             >
-                <ul className="flex flex-col items-center gap-6 py-6 my-12">
-                    <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-                    <li><Link href="/projects" onClick={() => setIsOpen(false)}>Projects</Link></li>
-                    <li><Link href="/about" onClick={() => setIsOpen(false)}>About</Link></li>
-                    <li><Link href="/contact" onClick={() => setIsOpen(false)}><Button /></Link></li>
+                <ul className="flex flex-col items-center gap-8 text-center">
+                    {links.map((link, index) => (
+                        <li key={index}>
+                            <Link
+                                href={link.href}
+                                onClick={() => setIsOpen(false)}
+                                className="text-2xl uppercase font-semibold tracking-widest hover:text-secondary transition-colors duration-300"
+                            >
+                                {link.label || "Home"}
+                            </Link>
+                        </li>
+                    ))}
+                    <li className="mt-4">
+                        <Link href="/contact" onClick={() => setIsOpen(false)}>
+                            <Button />
+                        </Link>
+                    </li>
                 </ul>
             </div>
         </nav>
