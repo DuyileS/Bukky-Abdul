@@ -63,7 +63,7 @@ const Form = () => {
                 <input
                     type="text"
                     name="name"
-                    className="p-4 border-0 rounded-lg focus:border-none focus:ring-0 w-full md:w-3/4 bg-[#e3e3e3] placeholder:font-semibold"
+                    className="p-4 border-0 rounded-lg focus:border-none focus:ring-0 focus:outline-none w-full md:w-3/4 bg-[#e3e3e3] placeholder:font-semibold"
                     placeholder="Name*"
                     value={formData.name}
                     onChange={handleChange}

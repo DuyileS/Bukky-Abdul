@@ -13,42 +13,39 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="sticky top-0 flex font-jost justify-between items-center z-50 max-w-7xl 2xl:max-w-[1400px] p-4 mx-auto w-full border-b border-secondary bg-primary/80 backdrop-blur-md">
+        <nav className="sticky top-0 flex font-jost justify-between items-center z-50 lg:max-w-full p-4 mx-auto w-full border-b border-secondary bg-primary/80 backdrop-blur-md">
             <Link href={"/"} className="relative z-50">
-                {/* <Image
-                    src={"/logo.png"}
+                <Image
+                    src={"/logo-removebg-preview.png"}
                     alt="Logo"
                     height={40}
                     width={80}
                     quality={100}
-                /> */}
-                <h1 className="text-xl font-bold">BUKKY ABDUL</h1>
+                />
             </Link>
-            <div className="hidden lg:flex justify-between items-center">
-                <ul className="flex justify-center gap-8 lg:gap-4  2xl:gap-16  mr-8 lg:mr-24 2xl:mr-4">
-                    {links.map((link, index) => {
-                        const isActive = pathname === link.href;
+            <ul className="hidden lg:flex justify-center gap-8 lg:gap-4 2xl:gap-16">
+                {links.map((link, index) => {
+                    const isActive = pathname === link.href;
 
-                        return (
-                            <li
-                                key={index}
-                                className="text-gray-400 hover:text-white text-xl"
+                    return (
+                        <li
+                            key={index}
+                            className="text-gray-400 hover:text-white text-xl"
+                        >
+                            <Link
+                                href={link.href}
+                                className={`text-xs uppercase transition-colors duration-300 ${isActive ? "text-white" : "text-gray-400 hover:text-white"
+                                    }`}
                             >
-                                <Link
-                                    href={link.href}
-                                    className={`text-xs uppercase transition-colors duration-300 ${isActive ? "text-white" : "text-gray-400 hover:text-white"
-                                        }`}
-                                >
-                                    {link.label}
-                                </Link>
-                            </li>
-                        );
-                    })}
-                </ul>
-                <Link href={"/contact"}>
-                    <Button />
-                </Link>
-            </div>
+                                {link.label}
+                            </Link>
+                        </li>
+                    );
+                })}
+            </ul>
+            <Link href={"/contact"} className="hidden lg:block">
+                <Button />
+            </Link>
             <div className="lg:hidden z-50">
                 <Icon
                     icon={isOpen ? "mdi:close" : "mdi:menu"}

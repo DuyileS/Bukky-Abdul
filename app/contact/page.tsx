@@ -35,7 +35,7 @@ const page = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 mt-2 gap-8 2xl:gap-12">
                     <div className='space-y-4'>
                         <h1 className='text-7xl 2xl:text-8xl font-bold'>Let&apos;s Connect</h1>
-                        <p className='font-semibold text-lg 2xl:text-xl max-w-lg'>Let's create something amazing together! Reach out <br /> I'd love to hear about your project and ideas.</p>
+                        <p className='font-semibold text-lg 2xl:text-xl max-w-lg'>Ready to unlock your potential and elevate your journey? <br /> Reach out I&apos;d love to hear your story and explore how I can support your growth.</p>
                         <hr className='w-3/4' />
                         <p className="flex items-center gap-1">
                             <span>
