@@ -75,10 +75,10 @@ const CareerCoachingPage = () => {
       <main>
         <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
           <Image
-            src="/hero2.jpg"
+            src="/coaching-hero.jpg"
             alt="Career Coaching Hero"
             fill
-            className="object-[40%_35%] object-cover opacity-40"
+            className="object-[50%_35%] object-cover opacity-40"
             priority
           />
           <div className="absolute inset-0 bg-linear-to from-primary/60 via-transparent to-primary" />

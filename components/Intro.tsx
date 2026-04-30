@@ -29,7 +29,7 @@ const Intro = () => {
             </div>
             <div className="relative w-full h-full min-h-[50vh] lg:min-h-screen">
                 <Image
-                    src={"/intro-image.jpg"}
+                    src={"/optimized-hero.jpg"}
                     alt="Hero image"
                     fill
                     className="object-cover lg:max-h-full rounded-lg lg:rounded-none"

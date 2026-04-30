@@ -10,7 +10,7 @@ const page = () => {
     const year = new Date().getFullYear();
 
     return (
-        <div className='bg-primary min-h-screen flex flex-col text-white'>
+        <div className='bg-primary min-h-screen font-playfair flex flex-col text-white'>
             <Navbar />
             <div className="flex-1 w-full max-w-7xl 2xl:max-w-[1400px] bg-primary font-jost text-white mx-auto px-8 py-12">
                 <div className="flex justify-between">
