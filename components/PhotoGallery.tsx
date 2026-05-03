@@ -42,12 +42,20 @@ const PhotoGallery = () => {
     };
   }, [currentSlide, paused, instanceRef]);
 
-  const images =
-    [
-      "/gallery2.jpg", "/gallery3.jpg", "/gallery4.jpg",
-      "/gallery5.jpg", "/gallery6.jpg", "/gallery1.jpg", "/gallery7.jpg", "/gallery8.jpg",
-      "/gallery9.jpg", "/gallery10.jpg", "/gallery11.jpg", "/gallery12.jpg",
-    ];
+  const images = [
+    { src: "/gallery2.jpg", caption: "Leadership Mentorship Session" },
+    { src: "/gallery3.jpg", caption: "Career Coaching Workshop" },
+    { src: "/gallery4.jpg", caption: "Speaking at the SCM Career Management Event" },
+    { src: "/gallery5.jpg", caption: "Empowering Young Professionals" },
+    { src: "/gallery6.jpg", caption: "Educational Leadership Forum" },
+    { src: "/gallery1.jpg", caption: "Host & Compere at the Annual Gala" },
+    { src: "/gallery7.jpg", caption: "Community Outreach Program" },
+    { src: "/gallery8.jpg", caption: "Professional Networking Event" },
+    { src: "/gallery9.jpg", caption: "Mentorship Circle" },
+    { src: "/gallery10.jpg", caption: "Corporate Training Session" },
+    { src: "/gallery11.jpg", caption: "Inspirational Keynote Address" },
+    { src: "/gallery12.jpg", caption: "Reflecting on Divine Potential" },
+  ];
 
   return (
     <>
@@ -58,7 +66,7 @@ const PhotoGallery = () => {
         </div>
         <h3 className="text-4xl md:text-5xl lg:text-6xl font-playfair font-semibold">Photo <span className="italic text-secondary">Gallery</span></h3>
       </div>
-      <section className="py-16 px-4 mx-auto md:mx-24 2xl:mx-auto max-w-7xl">
+      <section className="py-16 px-4 mx-auto max-w-4xl">
         <div
           className="relative group"
           onMouseEnter={() => setPaused(true)}
@@ -66,16 +74,21 @@ const PhotoGallery = () => {
         >
           {/* Main Slider Container */}
           <div ref={sliderRef} className="keen-slider overflow-hidden rounded-2xl shadow-2xl bg-white/5 backdrop-blur-sm border border-white/10">
-            {images.map((src, idx) => (
-              <div key={idx} className="keen-slider__slide relative h-[300px] md:h-[460px] flex justify-center items-center">
+            {images.map((img, idx) => (
+              <div key={idx} className="keen-slider__slide relative h-[300px] md:h-[460px] flex justify-center items-center group/slide">
                 <Image
-                  src={src}
-                  alt={`Gallery photo ${idx + 1}`}
+                  src={img.src}
+                  alt={img.caption}
                   fill
-                  className="object-contain p-1 md:p-2"
+                  className="object-contain p-1 md:p-0"
                   priority={idx === 0}
                 />
-                <div className="absolute inset-0 bg-linear-to-t from-black/20 to-transparent pointer-events-none" />
+                {/* Hover Overlay */}
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover/slide:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <p className="text-white text-sm md:text-base font-medium text-center transform translate-y-4 group-hover/slide:translate-y-0 transition-transform duration-300">
+                    {img.caption}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

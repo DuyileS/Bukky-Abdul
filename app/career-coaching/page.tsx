@@ -122,7 +122,7 @@ const CareerCoachingPage = () => {
             ))}
           </div>
         </section>
-        <Testimonials />
+        {/* <Testimonials /> */}
         {/* CTA Section */}
         <section className="py-24 px-6 bg-secondary/5">
           <div className="max-w-4xl mx-auto text-center space-y-8 p-12 rounded-3xl border border-secondary/20 relative overflow-hidden">

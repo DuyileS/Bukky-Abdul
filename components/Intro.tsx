@@ -32,7 +32,7 @@ const Intro = () => {
                     src={"/optimized-hero.jpg"}
                     alt="Hero image"
                     fill
-                    className="object-cover lg:max-h-full rounded-lg lg:rounded-none"
+                    className="object-cover px-8 lg:px-0 lg:max-h-full rounded-lg lg:rounded-none"
                     quality={100}
                     priority
                 />
