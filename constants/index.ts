@@ -6,5 +6,6 @@ export const links = [
     { label: "Career Coaching", href: "/career-coaching" },
     { label: "Hosting", href: "/hosting" },
     { label: "Education", href: "/education" },
-    { label: "Entertainment", href: "/entertainment" },
+    { label: "Media", href: "/media" },
+    { label: "Speaking", href: "/speaking" },
 ];

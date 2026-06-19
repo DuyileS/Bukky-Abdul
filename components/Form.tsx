@@ -25,7 +25,6 @@ const Form = () => {
     const handleSubmit: FormSubmitHandler = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
-        console.log("Form submitted with data:", formData);
 
         try {
             const response = await fetch("/api/contact", {
@@ -34,20 +33,21 @@ const Form = () => {
                 body: JSON.stringify(formData),
             });
 
-            console.log("Response:", response);
-
-            const result = await response.json();
-            console.log("Response:", result);
+            let result;
+            const contentType = response.headers.get("content-type");
+            if (contentType && contentType.includes("application/json")) {
+                result = await response.json();
+            } else {
+                result = { message: await response.text() };
+            }
 
             if (response.ok) {
                 toast.success("Message sent successfully!");
-                // Clear the form
                 setFormData({ name: "", email: "", message: "" });
             } else {
                 toast.error(`Error: ${result.message || "Failed to send message"}`);
             }
         } catch (error) {
-            console.log("Submission Error:", error);
             toast.error("An error occurred while sending the message.");
         } finally {
             setIsSubmitting(false);
@@ -55,45 +55,66 @@ const Form = () => {
     };
 
     return (
-        <div className="space-y-2">
-            <form
-                onSubmit={handleSubmit}
-                className="flex flex-col items-center space-y-3 text-black"
-            >
+        <form
+            onSubmit={handleSubmit}
+            className="flex flex-col space-y-5"
+        >
+            <div>
+                <label htmlFor="name" className="block text-sm font-medium text-deep-gray/70 mb-2 ml-1">Name</label>
                 <input
                     type="text"
+                    id="name"
                     name="name"
-                    className="p-4 border-0 rounded-lg focus:border-none focus:ring-0 focus:outline-none w-full md:w-3/4 bg-[#e3e3e3] placeholder:font-semibold"
-                    placeholder="Name*"
+                    className="w-full p-4 bg-warm-beige/30 border border-deep-gray/10 rounded-2xl focus:border-dusty-purple focus:ring-1 focus:ring-dusty-purple outline-none transition-all duration-300 text-deep-gray placeholder:text-deep-gray/40"
+                    placeholder="John Doe"
                     value={formData.name}
                     onChange={handleChange}
                     required
                 />
+            </div>
+            
+            <div>
+                <label htmlFor="email" className="block text-sm font-medium text-deep-gray/70 mb-2 ml-1">Email Address</label>
                 <input
                     type="email"
+                    id="email"
                     name="email"
-                    className="p-4 border-0 rounded-lg focus:border-none focus:ring-0 focus:outline-none w-full md:w-3/4 bg-[#e3e3e3] placeholder:font-semibold"
-                    placeholder="Email*"
+                    className="w-full p-4 bg-warm-beige/30 border border-deep-gray/10 rounded-2xl focus:border-dusty-purple focus:ring-1 focus:ring-dusty-purple outline-none transition-all duration-300 text-deep-gray placeholder:text-deep-gray/40"
+                    placeholder="john@example.com"
                     value={formData.email}
                     onChange={handleChange}
                     required
                 />
+            </div>
+            
+            <div>
+                <label htmlFor="message" className="block text-sm font-medium text-deep-gray/70 mb-2 ml-1">Your Message</label>
                 <textarea
+                    id="message"
                     name="message"
-                    className="px-4 pt-4 pb-12 border-0 rounded-lg focus:border-none focus:ring-0 focus:outline-none w-full md:w-3/4 bg-[#e3e3e3] placeholder:font-semibold"
-                    placeholder="Message*"
+                    rows={5}
+                    className="w-full p-4 bg-warm-beige/30 border border-deep-gray/10 rounded-2xl focus:border-dusty-purple focus:ring-1 focus:ring-dusty-purple outline-none transition-all duration-300 text-deep-gray placeholder:text-deep-gray/40 resize-none"
+                    placeholder="How can I help you?"
                     value={formData.message}
                     onChange={handleChange}
                     required
                 />
-                <button
-                    className="text-xl  rounded-xl w-full md:w-3/4 py-4 text-white bg-black hover:bg-gray-800 transition-colors disabled:opacity-50"
-                    type="submit"
-                    disabled={isSubmitting}>
-                    {isSubmitting ? "Submitting..." : "Submit Now"}
-                </button>
-            </form>
-        </div>
+            </div>
+            
+            <button
+                className="w-full py-4 mt-4 font-bold tracking-wider text-white uppercase transition-all duration-300 rounded-full bg-dusty-purple hover:bg-gold hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                type="submit"
+                disabled={isSubmitting}>
+                {isSubmitting ? (
+                    <span className="flex items-center justify-center gap-2">
+                        <svg className="w-5 h-5 animate-spin text-white" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        Sending...
+                    </span>
+                ) : (
+                    "Send Message"
+                )}
+            </button>
+        </form>
     );
 };
 

@@ -10,7 +10,7 @@ export default function Footer() {
     return (
         <div>
             <hr className="border-secondary" />
-            <footer className="bg-primary font-jost text-secondary px-6 py-10 md:py-0 w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 min-h-[20vh]">
+            <footer className="bg-black/20 backdrop-blur-md font-jost text-white px-6 py-10 md:py-0 w-full flex flex-col md:flex-row items-center justify-between gap-8 md:gap-0 min-h-[20vh]">
                 <Image
                     src={"/logo-removebg-preview.png"}
                     alt="Logo"

@@ -69,13 +69,13 @@ const offerings = [
 
 const CareerCoachingPage = () => {
   return (
-    <div className="bg-primary text-white font-jost min-h-screen selection:bg-secondary selection:text-white">
+    <div className="homepage-theme text-deep-gray font-jost min-h-screen selection:bg-secondary selection:text-white">
       <Navbar />
 
       <main>
         <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
           <Image
-            src="/coaching-hero.jpg"
+            src="/coaching.jpg"
             alt="Career Coaching Hero"
             fill
             className="object-[50%_35%] object-cover opacity-40"
@@ -87,20 +87,31 @@ const CareerCoachingPage = () => {
             <h1 className="text-5xl md:text-7xl font-playfair font-semibold">
               Career <span className="italic text-secondary">Coaching</span>
             </h1>
-            <p className="text-lg md:text-xl font-playfair italic text-gray-200 max-w-2xl mx-auto leading-relaxed">
+            {/* <p className="text-lg md:text-xl font-playfair italic text-deep-gray/90 max-w-2xl mx-auto leading-relaxed">
               "Guiding you from where you are to the divine potential God has scripted into your career."
+            </p> */}
+            <p className="text-lg md:text-xl font-playfair italic text-deep-gray/90 max-w-2xl mx-auto leading-relaxed">
+              "Your story deserves to be heard in the right rooms."
             </p>
           </div>
         </section>
 
         {/* Services Section */}
         <section className="py-24 px-6 max-w-7xl mx-auto">
-          <div className="text-center mb-20 space-y-4">
+          <div className="text-center mb-20 space-y-6">
             <h2 className="text-3xl md:text-4xl font-playfair font-bold">What I Offer</h2>
             <div className="w-24 h-1 bg-secondary mx-auto rounded-full" />
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              Comprehensive support designed to help you navigate every stage of your professional journey with confidence and clarity.
-            </p>
+            <div className="text-deep-gray/80 max-w-4xl mx-auto space-y-4 text-lg md:text-xl font-jost">
+              <p>
+                My role is to help you prepare, refine, and confidently communicate your professional story while connecting you to opportunities where your skills, experiences, and value can shine.
+              </p>
+              <p>
+                You already have something meaningful to offer. The goal is learning how to communicate it with clarity, strategy, and confidence.
+              </p>
+              <p>
+                Through personalized coaching, I help students, professionals, and career changers navigate their next steps with intention and excellence.
+              </p>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -115,24 +126,25 @@ const CareerCoachingPage = () => {
                 <h3 className="text-xl font-playfair font-semibold group-hover:text-secondary transition-colors duration-300">
                   {offering.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed text-sm md:text-base">
+                <p className="text-deep-gray/80 leading-relaxed text-sm md:text-base">
                   {offering.description}
                 </p>
               </div>
             ))}
           </div>
         </section>
-        {/* <Testimonials /> */}
-        {/* CTA Section */}
         <section className="py-24 px-6 bg-secondary/5">
           <div className="max-w-4xl mx-auto text-center space-y-8 p-12 rounded-3xl border border-secondary/20 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -mr-32 -mt-32" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -ml-32 -mb-32" />
 
             <h2 className="text-3xl md:text-5xl font-playfair font-bold">Ready to tell your professional story? Reach out here</h2>
-            <p className="text-lg text-gray-300 font-jost max-w-xl mx-auto">
-              Let's work together to unlock your full potential and design a career that truly reflects your values and aspirations.
+            <p className="text-lg text-deep-gray/80 font-jost max-w-xl mx-auto">
+              Every application, interview, introduction, and opportunity tells a story. Let’s make sure yours is memorable.
             </p>
+            {/* <p className="text-lg text-deep-gray/80 font-jost max-w-xl mx-auto">
+              Let's work together to unlock your full potential and design a career that truly reflects your values and aspirations.
+            </p> */}
             <div className="flex justify-center pt-4">
               <Link href="/contact">
                 <AnimatedButton />

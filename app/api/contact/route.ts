@@ -1,5 +1,6 @@
-import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
 
 export async function POST(request: NextRequest) {
     try {
@@ -26,7 +27,7 @@ export async function POST(request: NextRequest) {
         await transporter.sendMail({
             from: `"${name}" <${process.env.SENDER_EMAIL}>`,
             replyTo: email,
-            to: "davidmomodu.psd@gmail.com",
+            to: "Bukky@bukkyabdul.com",
             subject: `New Message from Portfolio Site from ${name}`,
             html: `
         <p><strong>Name:</strong> ${name}</p>

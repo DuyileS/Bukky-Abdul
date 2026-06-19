@@ -8,12 +8,21 @@ import { usePathname } from "next/navigation";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
-const Navbar = () => {
+interface NavbarProps {
+    variant?: "transparent" | "primary";
+}
+
+const Navbar = ({ variant = "transparent" }: NavbarProps) => {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
 
+    const isPrimary = variant === "primary";
+
     return (
-        <nav className="sticky top-0 flex font-jost justify-between items-center z-50 lg:max-w-full p-4 mx-auto w-full border-b border-secondary bg-primary/80 backdrop-blur-md">
+        <nav className={`sticky top-0 flex font-jost justify-between items-center z-50 lg:max-w-full p-4 mx-auto w-full border-b transition-colors duration-300 ${isPrimary
+            ? "border-primary/20 bg-primary shadow-lg"
+            : "border-white/10 bg-white/5 backdrop-blur-md"
+            }`}>
             <Link href={"/"} className="relative z-50">
                 <Image
                     src={"/logo-removebg-preview.png"}
@@ -30,11 +39,11 @@ const Navbar = () => {
                     return (
                         <li
                             key={index}
-                            className="text-gray-400 hover:text-white text-xl"
+                            className="text-white/80 hover:text-white text-xl"
                         >
                             <Link
                                 href={link.href}
-                                className={`text-xs uppercase transition-colors duration-300 ${isActive ? "text-white" : "text-gray-400 hover:text-white"
+                                className={`text-xs uppercase transition-colors duration-300 ${isActive ? "text-white" : "text-white/80 hover:text-white"
                                     }`}
                             >
                                 {link.label}
@@ -49,12 +58,12 @@ const Navbar = () => {
             <div className="lg:hidden z-50">
                 <Icon
                     icon={isOpen ? "mdi:close" : "mdi:menu"}
-                    className="w-10 h-10 focus:outline-none cursor-pointer transition-transform duration-300"
+                    className="w-10 h-10 focus:outline-none cursor-pointer transition-transform duration-300 text-white"
                     onClick={() => setIsOpen(!isOpen)}
                 />
             </div>
             <div
-                className={`fixed inset-0 w-full h-screen bg-primary/95 backdrop-blur-lg flex items-center justify-center transition-all duration-500 ease-in-out ${isOpen
+                className={`fixed inset-0 w-full h-screen bg-primary flex items-center justify-center transition-all duration-500 ease-in-out ${isOpen
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 -translate-y-full pointer-events-none"
                     } lg:hidden z-40`}
@@ -65,7 +74,7 @@ const Navbar = () => {
                             <Link
                                 href={link.href}
                                 onClick={() => setIsOpen(false)}
-                                className="text-2xl uppercase font-semibold tracking-widest hover:text-secondary transition-colors duration-300"
+                                className="text-2xl uppercase font-semibold tracking-widest text-white/80 hover:text-white transition-colors duration-300"
                             >
                                 {link.label || "Home"}
                             </Link>

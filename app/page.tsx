@@ -6,7 +6,7 @@ import Testimonials from "@/components/Testimonials";
 
 export default function Home() {
   return (
-    <div className="bg-primary text-white font-jost">
+    <div className="homepage-theme text-deep-gray font-jost min-h-screen">
       <Navbar />
       <Intro />
       <Testimonials />

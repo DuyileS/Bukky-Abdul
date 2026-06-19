@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import Image from "next/image";
@@ -43,18 +43,23 @@ const PhotoGallery = () => {
   }, [currentSlide, paused, instanceRef]);
 
   const images = [
-    { src: "/gallery2.jpg", caption: "Leadership Mentorship Session" },
-    { src: "/gallery3.jpg", caption: "Career Coaching Workshop" },
-    { src: "/gallery4.jpg", caption: "Speaking at the SCM Career Management Event" },
-    { src: "/gallery5.jpg", caption: "Empowering Young Professionals" },
-    { src: "/gallery6.jpg", caption: "Educational Leadership Forum" },
-    { src: "/gallery1.jpg", caption: "Host & Compere at the Annual Gala" },
-    { src: "/gallery7.jpg", caption: "Community Outreach Program" },
-    { src: "/gallery8.jpg", caption: "Professional Networking Event" },
-    { src: "/gallery9.jpg", caption: "Mentorship Circle" },
-    { src: "/gallery10.jpg", caption: "Corporate Training Session" },
-    { src: "/gallery11.jpg", caption: "Inspirational Keynote Address" },
-    { src: "/gallery12.jpg", caption: "Reflecting on Divine Potential" },
+    { src: "/gallery17.jpg", caption: "Master of Ceremonies: Guiding professional networking at the Haslam College of Business." },
+    { src: "/gallery2.JPG", caption: "Capturing the Joy: Bringing energy and smiles to every celebration." },
+    { src: "/gallery3.jpg", caption: "Behind the Scenes: Ready to take the stage and engage the audience." },
+    { src: "/gallery4.JPG", caption: "Interactive Hosting: Creating memorable moments through live engagement." },
+    { src: "/gallery5.jpg", caption: "Purposeful Speaking: Leading with passion at the CCI Austin Inaugural Service." },
+    { src: "/gallery6.jpg", caption: "Vibrant Celebrations: Elevating the atmosphere with dynamic energy." },
+    { src: "/gallery7.jpg", caption: "Multi-faceted Presence: Guest, career coach, and your favorite host." },
+    { src: "/gallery8.jpg", caption: "Empowering Voices: Inspiring audiences through impactful storytelling." },
+    { src: "/gallery9.jpg", caption: "Memorable Weddings: Anchoring your special day with grace and charisma." },
+    { src: "/gallery10.jpg", caption: "Corporate Excellence: Professional hosting for institutional events and fundraisers." },
+    { src: "/gallery11.jpg", caption: "Cultural Connection: Celebrating heritage and community with joy." },
+    { src: "/gallery12.jpg", caption: "Community Impact: Supporting visions and voices that matter." },
+    { src: "/gallery13.jpeg", caption: "Radiant Confidence: A strike of blue against the horizon." },
+    { src: "/gallery14.jpeg", caption: "Wisdom & Style: Professional excellence meets a heart for giving." },
+    { src: "/gallery15.HEIC", caption: "Impactful Leadership: Facilitating growth at the Employer Summit." },
+    { src: "/gallery16.jpg", caption: "Joyful Connection: Sharing stories that resonate and inspire." },
+    { src: "/gallery1.jpg", caption: "Elegant Galas: Co-hosting with style and professional synergy." },
   ];
 
   return (
@@ -84,8 +89,8 @@ const PhotoGallery = () => {
                   priority={idx === 0}
                 />
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover/slide:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                  <p className="text-white text-sm md:text-base font-medium text-center transform translate-y-4 group-hover/slide:translate-y-0 transition-transform duration-300">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/slide:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <p className="text-secondary text-base md:text-lg font-bold text-center drop-shadow-lg transform translate-y-4 group-hover/slide:translate-y-0 transition-transform duration-300">
                     {img.caption}
                   </p>
                 </div>

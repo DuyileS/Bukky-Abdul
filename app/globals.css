@@ -15,7 +15,119 @@
   --color-secondary-400: #C29F8E;
   --color-secondary-500: #A47864;
   --color-secondary-700: #7D5A4B;
+  --color-peach: #F4A261;
+  --color-warm-beige: #FAF9F6;
+  --color-deep-gray: #2F2F2F;
+  --color-dusty-purple: #6D597A;
+  --color-gold: #DFA01E;
   --font-sans: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
   --font-jost: var(--font-jost), sans-serif;
   --font-playfair: var(--font-playfair), serif;
+}
+
+.homepage-theme {
+  --color-primary: #6D597A;
+  --color-accent: #F4A261;
+  --color-secondary: #DFA01E;
+  --color-secondary-500: #DFA01E;
+  --color-secondary-400: #C08815;
+  --color-background: #FAF9F6;
+  --color-foreground: #2F2F2F;
+  
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  background-image: none;
+}
+
+/* Default text color for light theme sections */
+.homepage-theme .text-white {
+  color: var(--color-foreground);
+}
+
+.homepage-theme .text-white\/80 {
+  color: rgba(47, 47, 47, 0.8);
+}
+
+/* Navbar & Footer: Dusty Purple background with White text */
+.homepage-theme nav, 
+.homepage-theme footer {
+  background-color: var(--color-primary) !important;
+  color: white !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.homepage-theme nav *, 
+.homepage-theme footer * {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.homepage-theme nav .text-white,
+.homepage-theme nav .text-white\/80,
+.homepage-theme footer .text-white,
+.homepage-theme footer .text-white\/80,
+.homepage-theme footer p {
+  color: white !important;
+}
+
+.homepage-theme nav .text-white\/80,
+.homepage-theme footer .text-white\/80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Button & Accent overrides */
+.homepage-theme .bg-primary {
+  background-color: var(--color-primary) !important;
+}
+
+.homepage-theme .bg-secondary,
+.homepage-theme .bg-secondary-500 {
+  background-color: var(--color-secondary) !important;
+}
+
+.homepage-theme .bg-secondary-400,
+.homepage-theme .group-hover\:bg-secondary-400:hover {
+  background-color: #C08815 !important;
+}
+
+.homepage-theme .text-primary,
+.homepage-theme .group-hover\:text-primary-700:hover {
+  color: var(--color-primary) !important;
+}
+
+
+/* Section overrides for light theme */
+.homepage-theme .bg-white\/5 {
+  background-color: rgba(47, 47, 47, 0.05);
+}
+
+.homepage-theme .bg-white\/10 {
+  background-color: rgba(47, 47, 47, 0.1);
+}
+
+.homepage-theme .hover\:bg-white\/20:hover {
+  background-color: rgba(47, 47, 47, 0.2);
+}
+
+.homepage-theme .border-white\/10 {
+  border-color: rgba(47, 47, 47, 0.1);
+}
+
+.homepage-theme .border-white\/20 {
+  border-color: rgba(47, 47, 47, 0.2);
+}
+
+.homepage-theme .backdrop-blur-md {
+  backdrop-filter: blur(12px);
+}
+
+.homepage-theme .text-secondary {
+  color: var(--color-secondary);
+}
+
+.homepage-theme .border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.homepage-theme hr.border-secondary {
+  border-color: var(--color-secondary);
 }

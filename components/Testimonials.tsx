@@ -6,27 +6,33 @@ import { Icon } from "@iconify/react";
 const testimonials = [
   {
     quote: "It was a beautiful discussion session. It helped see certain area of grad school with a new perspective",
-    author: "Sarah Johnson",
-    role: "Marketing Director",
+    author: "Oluwadara Alabi "
+
   },
   {
     quote: "My session was very enlightening, not tensed at all(this makes me too nervous to ask questions). I’m going to start putting in place everything I learnt ASAP.",
-    author: "David Chen",
-    role: "Conference Organizer",
+    author: "Yvonne Sado"
   },
   {
     quote:
       "Honestly, I wasnt expecting so much from this but after my conversation with Bukky I understood a lot of gaps in my application. " +
       "Unlike most career coaches who use a one size fits all, Bukky tends to tailor the advice according to your specific requirements. " +
       "Her suggestions were detailed to absolute lines",
-    author: "Michelle Williams",
-    role: "Creative Lead",
+    author: "Arimoro Olayinka Imisioluwa"
   },
+  {
+    quote: "After working together, Bukky gave me tips on handling my LinkedIn profile, one of which was to start including videos of my projects. My current employer stumbled on one of those videos and that was the key thing that made him realize he wanted me on his team!",
+    author: "Tomiwa Toye",
+  },
+  {
+    quote: "Bukky was very friendly, and she tried to tailor the experience to my field. The coaching was fun and gave me new insights!",
+    author: "Chinaza Esiaba"
+  }
 ];
 
 const Testimonials = () => {
   return (
-    <section className="py-20 bg-primary/20">
+    <section className="py-20 bg-white/5 backdrop-blur-sm">
       <div className="px-6 space-y-4 mb-12">
         <div className="flex items-center gap-4 uppercase font-semibold text-sm md:text-base">
           <p className="uppercase tracking-[0.22em] font-medium text-secondary text-xs">See what others have said</p>
@@ -54,7 +60,7 @@ const Testimonials = () => {
 
               <div className="mt-auto pt-6 border-t border-white/5">
                 <h4 className="font-semibold text-white tracking-wide text-lg">{t.author}</h4>
-                <p className="text-sm text-secondary uppercase tracking-wider font-medium">{t.role}</p>
+                {/* <p className="text-sm text-secondary uppercase tracking-wider font-medium">{t?.role}</p> */}
               </div>
             </div>
           ))}
