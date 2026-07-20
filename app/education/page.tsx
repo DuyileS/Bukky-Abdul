@@ -63,7 +63,7 @@ const EducationPage = () => {
                     <div className="relative h-[650px] w-full rounded-3xl overflow-hidden shadow-2xl group border border-deep-gray/5 order-2 lg:order-1">
                         <div className="absolute inset-0 bg-gradient-to-t from-dusty-purple/40 via-transparent to-transparent opacity-80 z-10 mix-blend-overlay"></div>
                         <Image
-                            src="/gallery14.jpeg"
+                            src="/bukky26.jpeg"
                             alt="Education and Growth"
                             fill
                             className="object-cover transition-transform duration-1000 group-hover:scale-105"

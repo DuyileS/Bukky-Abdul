@@ -17,7 +17,7 @@ const Intro = () => {
                     </div>
                 </div>
                 <p className="text-4xl md:text-5xl lg:text-6xl font-playfair font-semibold">Bukky <span className="italic text-secondary">Abdul</span></p>
-                <p className="italic font-playfair tracking-tighter text-lg md:text-xl leading-relaxed">
+                <p className="text-deep-gray/80 tracking-tighter leading-relaxed">
                     &quot;We are all in the business of telling stories.
                     <br /><br />
                     Every conversation, every opportunity, every stage, every room, and every calling carries a story waiting to be told.
