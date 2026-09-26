@@ -7,7 +7,7 @@ const MediaPage = () => {
     return (
         <div className="homepage-theme text-deep-gray font-jost min-h-screen flex flex-col">
             <Navbar />
-            
+
             {/* Hero Section */}
             <section className="relative w-full min-h-[60vh] flex flex-col justify-center items-center text-center px-6 py-24 overflow-hidden pt-32">
                 <div className="absolute inset-0 z-0 bg-gradient-to-b from-warm-beige to-white"></div>
@@ -63,14 +63,14 @@ const MediaPage = () => {
                             {/* Poster Image */}
                             <div className="relative h-[400px] md:h-auto overflow-hidden bg-warm-beige">
                                 <Image
-                                    src="/images/disguise-poster.png"
+                                    src="/movieCover.jpeg"
                                     alt="Disguise Short Film Poster"
                                     fill
                                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent md:hidden"></div>
                             </div>
-                            
+
                             {/* Content */}
                             <div className="flex flex-col justify-center p-8 md:p-12 z-10 relative">
                                 <h3 className="text-2xl font-bold mb-4 text-dusty-purple group-hover:text-gold transition-colors font-playfair">
