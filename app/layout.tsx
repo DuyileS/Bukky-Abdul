@@ -39,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/logo-removebg-preview..png" />
+        <link rel="icon" href="/logo-removebg-preview.png" />
         <link
           rel="preload"
           href="/fonts/Monigue.otf"
